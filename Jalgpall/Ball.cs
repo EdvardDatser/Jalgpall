@@ -13,6 +13,8 @@ namespace Jalgpall
 
         private double _vx, _vy; // скорость/дистанция на которую мяч будет
 
+        public string sym { get; } = "0";
+
         private Game _game; // Связь мяча с игрой
 
         //Конструктор 
@@ -44,6 +46,5 @@ namespace Jalgpall
                 _vy = 0;
             }
         }
-
     }
 }

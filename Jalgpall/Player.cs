@@ -94,5 +94,10 @@ namespace Jalgpall
                 _vx = _vy = 0;
             }
         }
+        public void DrawP()
+        {
+            Console.SetCursorPosition((int)X, (int)Y);
+            Console.Write("O");
+        }
     }
 }

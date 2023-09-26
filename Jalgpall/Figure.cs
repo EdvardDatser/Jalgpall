@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Jalgpall
 {
-    protected List<Point> pList;
-    class Figure 
+    internal class Figure
     {
+        protected List<Point> plist;
         public void Draw()
         {
-            foreach (Point p in pList)
+            foreach (Point p in plist)
             {
                 p.Draw();
             }
         }
+
     }
 }

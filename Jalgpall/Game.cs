@@ -27,6 +27,7 @@ namespace Jalgpall
             Ball = new Ball(Stadium.Width / 2, Stadium.Height / 2, this);
             HomeTeam.StartGame(Stadium.Width / 2, Stadium.Height);
             AwayTeam.StartGame(Stadium.Width / 2, Stadium.Height);
+            DrawB(Ball);
         }
         private (double, double) GetPositionForAwayTeam(double x, double y) // Определение координат для команды гостей
         {
@@ -61,5 +62,14 @@ namespace Jalgpall
             AwayTeam.Move();
             Ball.Move();
         }
+        public static void DrawB(Ball ball)
+        {
+            int posX = (int)Math.Round(ball.X); // Convert X to an integer
+            int posY = (int)Math.Round(ball.Y); // Convert Y to an integer
+            Console.SetCursorPosition(posX, posY);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(ball.sym);
+        }
     }
 }
+ 

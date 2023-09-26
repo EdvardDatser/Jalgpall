@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,13 @@ namespace Jalgpall
             wallList.Add(leftLine);
             wallList.Add(rightLine);
         }
-
+        public void Draw()
+        {
+            foreach (var wall in wallList)
+            {
+                wall.Draw();
+            }
+        }
 
         public int Width { get; }
 

@@ -3,17 +3,10 @@ namespace Jalgpall
 {
     class Program 
     {
-        public static void Main() 
+        static void Main() 
         {
-            Console.Clear();
 
-            Console.SetWindowSize(95, 25);
-            Stadium s = new Stadium(80, 25);
-            Stadium.Draw();
-            // Poka ne rabotaet
-
-
-            //Sozdanie i zapolnenie komand//
+            //Player play = new Player("d");
 
             Team t1 = new Team("Esimene team");
 
@@ -32,13 +25,30 @@ namespace Jalgpall
             t2.AddPlayer(p5);
             Player p6 = new Player("Mängija6");
             t2.AddPlayer(p6);
-            //--------------------------------//
 
-            //Start igri//
+            Stadium s = new Stadium(82, 27);
+
+            //t2 = Game.AwayTeam(t1, t2, s);
 
             Game g = new Game(t1, t2, s);
+
+            //Ball b = new Ball(X, Y, g);
+
             g.Start();
-            //--------------------------//
-        }   
+            while (true) 
+            {
+                Console.SetCursorPosition(82,27);
+                //g.DrawB();
+                s.Draw();
+                p1.DrawP();
+                p2.DrawP();
+                p3.DrawP();
+                p4.DrawP();
+                p5.DrawP();
+                p6.DrawP();
+                //g.Move();
+                //play.Move();
+            }
+        }
     }
 }
