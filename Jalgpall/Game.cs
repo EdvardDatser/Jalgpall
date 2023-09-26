@@ -24,9 +24,10 @@ namespace Jalgpall
 
         public void Start() // Начало игры, мяч по центру, поле делиться по пополам по вертикале 
         {
+
             Ball = new Ball(Stadium.Width / 2, Stadium.Height / 2, this);
-            HomeTeam.StartGame(Stadium.Width / 2, Stadium.Height);
-            AwayTeam.StartGame(Stadium.Width / 2, Stadium.Height);
+            HomeTeam.StartGameH(Stadium.Width / 2, Stadium.Height);
+            AwayTeam.StartGameA(Stadium.Width / 2, Stadium.Height);
             DrawB(Ball);
         }
         private (double, double) GetPositionForAwayTeam(double x, double y) // Определение координат для команды гостей
@@ -58,9 +59,12 @@ namespace Jalgpall
 
         public void Move()// Двигаемся, просто двигаемся
         {
+            Console.ForegroundColor= ConsoleColor.Green;
             HomeTeam.Move();
+            Console.ForegroundColor= ConsoleColor.Magenta;
             AwayTeam.Move();
             Ball.Move();
+            DrawB(Ball);
         }
         public static void DrawB(Ball ball)
         {
@@ -70,6 +74,7 @@ namespace Jalgpall
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(ball.sym);
         }
+
     }
 }
  

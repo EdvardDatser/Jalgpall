@@ -17,8 +17,9 @@ namespace Jalgpall
             Name = name;
         }
 
-        public void StartGame(int width, int height) // Метод начало игры
+        public void StartGameH(int width, int height) // Метод начало игры
         {
+            Console.ForegroundColor= ConsoleColor.Green;
             Random rnd = new Random();
             foreach (var player in Players) // Переберает игроков и в случайном порядке расставляет их на поле
             {
@@ -26,6 +27,21 @@ namespace Jalgpall
                     rnd.NextDouble() * width,
                     rnd.NextDouble() * height 
                     );
+                player.DrawP(player);
+            }
+        }
+
+        public void StartGameA(int width, int height) // Метод начало игры
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Random rnd = new Random();
+            foreach (var player in Players) // Переберает игроков и в случайном порядке расставляет их на поле
+            {
+                player.SetPosition(
+                    rnd.NextDouble() * width,
+                    rnd.NextDouble() * height
+                    );
+                player.DrawP(player);
             }
         }
 
@@ -34,6 +50,22 @@ namespace Jalgpall
             if (player.Team != null) return;
             Players.Add(player);
             player.Team = this;
+        }
+
+        public void GenATeam()
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                AddPlayer(new Player("A"));
+            }
+        }
+
+        public void GenHTeam()
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                AddPlayer(new Player("H"));
+            }
         }
 
         public (double, double) GetBallPosition() // Получение позиции мяча
@@ -67,6 +99,10 @@ namespace Jalgpall
         {
             GetClosestPlayerToBall().MoveTowardsBall();
             Players.ForEach(player => player.Move());
+            foreach (var player in Players) 
+            {
+                player.DrawP(player);
+            }
         }
     }
 }

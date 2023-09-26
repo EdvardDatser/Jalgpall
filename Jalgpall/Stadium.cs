@@ -19,10 +19,10 @@ namespace Jalgpall
             Width = width;
             Height = height;
 
-            HorizontalLine upLine = new HorizontalLine(0, width - 2, 0, '+');
-            HorizontalLine downLine = new HorizontalLine(0, width - 2, height - 1, '+');
-            VerticalLine leftLine = new VerticalLine(0, height - 1, 0, '+');
-            VerticalLine rightLine = new VerticalLine(0, height - 1, width - 2, '+');
+            HorizontalLine upLine = new HorizontalLine(0, width - 2, 0, '-');
+            HorizontalLine downLine = new HorizontalLine(0, width - 2, height - 1, '-');
+            VerticalLine leftLine = new VerticalLine(0, height - 1, 0, '{');
+            VerticalLine rightLine = new VerticalLine(0, height - 1, width - 2, '}');
 
             wallList.Add(upLine);
             wallList.Add(downLine);

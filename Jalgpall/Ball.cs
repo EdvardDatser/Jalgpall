@@ -13,7 +13,7 @@ namespace Jalgpall
 
         private double _vx, _vy; // скорость/дистанция на которую мяч будет
 
-        public string sym { get; } = "0";
+        public string sym { get; } = "DOTA2";
 
         private Game _game; // Связь мяча с игрой
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,10 +95,10 @@ namespace Jalgpall
                 _vx = _vy = 0;
             }
         }
-        public void DrawP()
+        public void DrawP(Player player)
         {
             Console.SetCursorPosition((int)X, (int)Y);
-            Console.Write("O");
+            Console.Write(player.Name);
         }
     }
 }
